@@ -34,41 +34,32 @@ public class ShakeShackBurgerApplication {
 	private static void handleMainMenuInput() {
 		Scanner scanner = new Scanner(System.in);
 		int input = scanner.nextInt();
-		switch (input) {
-			case 1:
-				displayBurgersMenu();
-				break;
-			case 2:
-				displayFrozenCustardMenu();
-				break;
-			case 3:
-				displayDrinksMenu();
-				break;
-			case 4:
-				displayBeerMenu();
-				break;
-			case 5:
+		int mainMenuSize = menuContext.getMenus("Main").size();
+		int orderMenuSize = menuContext.getMenus("Order").size();
+
+		if (0 < input && input <= mainMenuSize) {
+			displayMenu(menuContext.getMenus("Main").get(input - 1));
+		} else if (input <= mainMenuSize + orderMenuSize) {
+			if (input == mainMenuSize + 1) {
 				displayOrderMenu();
-				break;
-			case 6:
+			} else if (input == mainMenuSize + 2) {
 				handleCancelMenuInput();
-				break;
-			default:
-				System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
-				handleMainMenuInput();
-				break;
+			}
+		} else {
+			System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+			handleMainMenuInput();
 		}
 	}
 
-	private static void displayBurgersMenu() {
+	private static void displayMenu(Menu menu) {
 		System.out.println("SHAKESHACK BURGER 에 오신걸 환영합니다.");
 		System.out.println("아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n");
 
-		System.out.println("[ Burgers MENU ]");
-		List<Item> burgerItems = menuContext.getMenuItems("Burgers");
-		printMenuItems(burgerItems);
+		System.out.println("[ " + menu.name + " MENU ]");
+		List<Item> items = menuContext.getMenuItems(menu.name);
+		printMenuItems(items);
 
-		handleMenuItemInput(burgerItems);
+		handleMenuItemInput(items);
 	}
 
 	private static void handleMenuItemInput(List<Item> items) {
@@ -88,38 +79,6 @@ public class ShakeShackBurgerApplication {
 			int num = i + 1;
 			System.out.println(num + ". " + items.get(i).name + "   | " + items.get(i).price + " | " + items.get(i).description);
 		}
-	}
-	private static void displayFrozenCustardMenu() {
-		System.out.println("SHAKESHACK BURGER 에 오신걸 환영합니다.");
-		System.out.println("아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n");
-
-		System.out.println("[ Frozen Custard MENU ]");
-		List<Item> frozenCustardItems = menuContext.getMenuItems("Frozen Custard");
-		printMenuItems(frozenCustardItems);
-
-		handleMenuItemInput(frozenCustardItems);
-	}
-
-	private static void displayDrinksMenu() {
-		System.out.println("SHAKESHACK BURGER 에 오신걸 환영합니다.");
-		System.out.println("아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n");
-
-		System.out.println("[ Drinks MENU ]");
-		List<Item> drinkItems = menuContext.getMenuItems("Drinks");
-		printMenuItems(drinkItems);
-
-		handleMenuItemInput(drinkItems);
-	}
-
-	private static void displayBeerMenu() {
-		System.out.println("SHAKESHACK BURGER 에 오신걸 환영합니다.");
-		System.out.println("아래 상품메뉴판을 보시고 상품을 골라 입력해주세요.\n");
-
-		System.out.println("[ Beer MENU ]");
-		List<Item> beerItems = menuContext.getMenuItems("Beer");
-		printMenuItems(beerItems);
-
-		handleMenuItemInput(beerItems);
 	}
 
 	private static void displayConfirmation(Item menuItem) {
