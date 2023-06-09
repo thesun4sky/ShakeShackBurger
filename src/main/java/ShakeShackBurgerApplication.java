@@ -3,9 +3,11 @@ import java.util.Scanner;
 
 public class ShakeShackBurgerApplication {
 	private static MenuContext menuContext;
+	private static ManagementContext managementContext;
 
 	public static void main(String[] args) {
 		menuContext = new MenuContext();
+		managementContext = new ManagementContext();
 		displayMainMenu();
 	}
 
@@ -15,20 +17,19 @@ public class ShakeShackBurgerApplication {
 
 		System.out.println("[ SHAKESHACK MENU ]");
 		List<Menu> mainMenus = menuContext.getMenus("Main");
-		int nextNum = printMenu(mainMenus, 1);
+		printMenu(mainMenus);
 
 		System.out.println("[ ORDER MENU ]");
 		List<Menu> orderMenus = menuContext.getMenus("Order");
-		printMenu(orderMenus, nextNum);
+		printMenu(orderMenus);
 
 		handleMainMenuInput();
 	}
 
-	private static int printMenu(List<Menu> menus, int num) {
+	private static void printMenu(List<Menu> menus) {
 		for (int i=0; i<menus.size(); i++) {
-			System.out.println(num++ + ". " + menus.get(i).name + "   | " + menus.get(i).description);
+			System.out.println(menus.get(i).id + ". " + menus.get(i).name + "   | " + menus.get(i).description);
 		}
-		return num;
 	}
 
 	private static void handleMainMenuInput() {
@@ -37,7 +38,9 @@ public class ShakeShackBurgerApplication {
 		int mainMenuSize = menuContext.getMenus("Main").size();
 		int orderMenuSize = menuContext.getMenus("Order").size();
 
-		if (0 < input && input <= mainMenuSize) {
+		if (input == 0) {
+			displayManagementMenu();
+		} else if (input <= mainMenuSize) {
 			displayMenu(menuContext.getMenus("Main").get(input - 1));
 		} else if (input <= mainMenuSize + orderMenuSize) {
 			if (input == mainMenuSize + 1) {
@@ -60,6 +63,47 @@ public class ShakeShackBurgerApplication {
 		printMenuItems(items);
 
 		handleMenuItemInput(items);
+	}
+
+	private static void displayManagementMenu() {
+		System.out.println("SHAKESHACK BURGER 관리 메뉴에 오신걸 환영합니다.");
+		System.out.println("아래 목록해서 원하는 명령을 골라 입력해주세요.\n");
+
+		managementContext.displayMainMenu();
+
+		handleCommandInput();
+	}
+
+	private static void handleCommandInput() {
+		Scanner scanner = new Scanner(System.in);
+		int input = scanner.nextInt();
+		if (input == 0) {
+			displayMainMenu();
+		} else if (input >= 1 && input <= 4) {
+			switch (input) {
+				case 1:
+					managementContext.displayWaitingOrders();
+					break;
+				case 2:
+					managementContext.displayCompletedOrders();
+					break;
+				case 3:
+					System.out.print("메뉴: ");
+					String menu = scanner.nextLine();
+
+					Item newItem = managementContext.createMenuItem(scanner);
+					menuContext.addMenuItem(menu, newItem);
+					break;
+				case 4:
+					managementContext.deleteMenuItem();
+					break;
+				default:
+					System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+			}
+		} else {
+			System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+		}
+		displayManagementMenu();
 	}
 
 	private static void handleMenuItemInput(List<Item> items) {
@@ -131,8 +175,12 @@ public class ShakeShackBurgerApplication {
 
 	private static void displayOrderComplete() {
 		int orderNumber = menuContext.generateOrderNumber();
+		List<Item> cart = menuContext.getCart();
+
 		System.out.println("주문이 완료되었습니다!\n");
 		System.out.println("대기번호는 [ " + orderNumber + " ] 번 입니다.");
+
+		managementContext.addCartToOrder(orderNumber, cart);
 
 		resetCartAndDisplayMainMenu();
 	}
