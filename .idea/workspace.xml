@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9636530-f211-4ff0-b2d0-d87eeac22cbc" name="Changes" comment="feat : 관리 프로그램 상품 삭제 기능 추가">
+    <list default="true" id="e9636530-f211-4ff0-b2d0-d87eeac22cbc" name="Changes" comment="feat : 관리 프로그램 주문목록 조회시 주문시각, 완료시각, 총가격 필드 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ManagementContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ManagementContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MenuContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MenuContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" afterDir="false" />
     </list>
@@ -119,7 +120,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686287684766</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="feat : 관리 프로그램 주문목록 조회시 주문시각, 완료시각, 총가격 필드 추가">
+      <created>1686288212329</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686288212329</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -142,6 +150,7 @@
     <MESSAGE value="feat : 관리 프로그램 대기주문 목록, 완료주문 목록, 상품 생성 기능 추가" />
     <MESSAGE value="feat : 관리 프로그램 상품 추가기능 보완" />
     <MESSAGE value="feat : 관리 프로그램 상품 삭제 기능 추가" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 관리 프로그램 상품 삭제 기능 추가" />
+    <MESSAGE value="feat : 관리 프로그램 주문목록 조회시 주문시각, 완료시각, 총가격 필드 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 관리 프로그램 주문목록 조회시 주문시각, 완료시각, 총가격 필드 추가" />
   </component>
 </project>

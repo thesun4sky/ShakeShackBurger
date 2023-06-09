@@ -1,5 +1,4 @@
 import java.util.List;
-import java.util.Map;
 import java.util.Scanner;
 
 public class ShakeShackBurgerApplication {
@@ -44,10 +43,20 @@ public class ShakeShackBurgerApplication {
 		} else if (input <= mainMenuSize) {
 			displayMenu(menuContext.getMenus("Main").get(input - 1));
 		} else if (input <= mainMenuSize + orderMenuSize) {
-			if (input == mainMenuSize + 1) {
-				displayOrderMenu();
-			} else if (input == mainMenuSize + 2) {
-				handleCancelMenuInput();
+			int orderInput = input - mainMenuSize;
+			switch (orderInput) {
+				case 1:
+					displayOrderMenu();
+					break;
+				case 2:
+					handleCancelMenuInput();
+					break;
+				case 3:
+					handleListMenuInput();
+					break;
+				default:
+					System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
+					handleMainMenuInput();
 			}
 		} else {
 			System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
@@ -83,7 +92,7 @@ public class ShakeShackBurgerApplication {
 		} else if (input >= 1 && input <= 4) {
 			switch (input) {
 				case 1:
-					managementContext.displayWaitingOrders();
+					managementContext.displayWaitingOrdersAndProcess();
 					break;
 				case 2:
 					managementContext.displayCompletedOrders();
@@ -216,6 +225,12 @@ public class ShakeShackBurgerApplication {
 		handleCancelConfirmationInput();
 	}
 
+	private static void handleListMenuInput() {
+		managementContext.displayWaitingOrders();
+		managementContext.displayCompletedOrders();
+
+		displayMainMenu();
+	}
 	private static void handleCancelConfirmationInput() {
 		Scanner scanner = new Scanner(System.in);
 		int input = scanner.nextInt();

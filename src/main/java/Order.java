@@ -26,12 +26,12 @@ public class Order {
 	}
 
 	public void display() {
-		System.out.println("주문번호 : " + this.orderNumber);
-		System.out.println("주문시각 : " + this.orderDate);
+		System.out.println("\t주문번호 : " + this.orderNumber);
+		System.out.println("\t주문시각 : " + this.orderDate);
+		System.out.println("\t주문상품 목록 : ");
 		for (Item item: cart) {
-			System.out.println(item.name + "   | " + item.price + " | " + item.description);
+			System.out.println("\t\t" + item.name + "   | " + item.price + " | " + item.description);
 		}
-		System.out.println("총 가격 : " + this.totalPrice);
-		System.out.println();
+		System.out.println("\t총 가격 : " + this.totalPrice);
 	}
 }

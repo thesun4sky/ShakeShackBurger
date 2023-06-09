@@ -20,13 +20,8 @@ public class ManagementContext {
 		orderList.add(new Order(orderNumber, orderItemList, totalPrice));
 	}
 
-	public void displayWaitingOrders() {
-		System.out.println("대기 주문 목록:");
-		for (Order order : orderList) {
-			if (!order.complete) {
-				order.display();
-			}
-		}
+	public void displayWaitingOrdersAndProcess() {
+		displayWaitingOrders();
 
 		System.out.println();
 		System.out.println("대기중인 주문을 처리하시겠습니까?");
@@ -35,6 +30,15 @@ public class ManagementContext {
 		int input = scanner.nextInt();
 		if (input == 1) {
 			processWaitingOrder();
+		}
+	}
+
+	public void displayWaitingOrders() {
+		System.out.println("대기 주문 목록:");
+		for (Order order : orderList) {
+			if (!order.complete) {
+				order.display();
+			}
 		}
 	}
 
@@ -71,7 +75,8 @@ public class ManagementContext {
 		for (Order order : orderList) {
 			if (order.complete) {
 				order.display();
-				System.out.println("완료시각 : " + order.completeDate);
+				System.out.println("\t완료시각 : " + order.completeDate);
+				System.out.println();
 			}
 		}
 		System.out.println();
