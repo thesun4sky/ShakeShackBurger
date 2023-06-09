@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ManagementContext {
@@ -81,12 +82,13 @@ public class ManagementContext {
 		}
 	}
 
-	public Item createMenuItem(Scanner scanner) {
+	public Item createMenuItem() {
+		Scanner scanner = new Scanner(System.in);
 		System.out.print("이름: ");
-		String name = scanner.next();
+		String name = scanner.nextLine();
 
 		System.out.print("설명: ");
-		String description = scanner.next();
+		String description = scanner.nextLine();
 
 		System.out.print("가격: ");
 		double price = scanner.nextDouble();
@@ -97,22 +99,18 @@ public class ManagementContext {
 		return new Item(name, price, description);
 	}
 
-	public void deleteMenuItem() {
-		Scanner scanner = new Scanner(System.in);
-
-		System.out.print("삭제할 상품ID: ");
-		int itemId = scanner.nextInt();
-		scanner.nextLine();
-		//
-		//if (itemId < 1 || itemId > menuItems.size()) {
-		//	System.out.println("유효하지 않은 상품ID입니다.");
-		//	return;
-		//}
-		//
-		//menuItems.remove(itemId - 1);
-		//
-		//System.out.println("상품이 삭제되었습니다.");
-		//System.out.println();
+	public void deleteMenuItems(Map<String, List<Item>> menuItems, int itemId) {
+		menuItems.forEach((key, value) -> {
+			int removeIndex = -1;
+			for(int i=0; i<value.size(); i++) {
+				if (value.get(i).id == itemId) {
+					removeIndex = i;
+				}
+			}
+			if (removeIndex > -1) {
+				value.remove(removeIndex);
+			}
+		});
+		System.out.println("상품이 삭제되었습니다.");
 	}
-
 }

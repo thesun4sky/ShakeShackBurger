@@ -1,4 +1,5 @@
 import java.util.List;
+import java.util.Map;
 import java.util.Scanner;
 
 public class ShakeShackBurgerApplication {
@@ -88,12 +89,15 @@ public class ShakeShackBurgerApplication {
 					managementContext.displayCompletedOrders();
 					break;
 				case 3:
-					String menuName = getMenuName(scanner);
-					Item newItem = managementContext.createMenuItem(scanner);
+					String menuName = getMenuName();
+					Item newItem = managementContext.createMenuItem();
 					menuContext.addMenuItem(menuName, newItem);
 					break;
 				case 4:
-					managementContext.deleteMenuItem();
+					menuContext.displayAllItem();
+					System.out.print("삭제할 상품 ID: ");
+					int itemId = scanner.nextInt();
+					managementContext.deleteMenuItems(menuContext.getMenuItemMap(), itemId);
 					break;
 				default:
 					System.out.println("잘못된 입력입니다. 다시 입력해주세요.");
@@ -104,11 +108,12 @@ public class ShakeShackBurgerApplication {
 		displayManagementMenu();
 	}
 
-	private static String getMenuName(Scanner scanner) {
-		System.out.print("메뉴 목록");
+	private static String getMenuName() {
+		System.out.println("[ 메뉴 목록 ]");
 		List<Menu> mainMenus = menuContext.getMenus("Main");
 		printMenu(mainMenus);
 		System.out.print("메뉴 ID: ");
+		Scanner scanner = new Scanner(System.in);
 		int menuId = scanner.nextInt();
 		return menuContext.getMainMenuName(menuId);
 	}

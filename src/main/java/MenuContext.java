@@ -69,6 +69,10 @@ class MenuContext {
 		return menuItems.get(key);
 	}
 
+	public Map<String, List<Item>> getMenuItemMap() {
+		return menuItems;
+	}
+
 	public List<Item> getCart() {
 		return cart;
 	}
@@ -90,6 +94,16 @@ class MenuContext {
 	public void addToCart(Item menuItem) {
 		cart.add(menuItem);
 		totalPrice += menuItem.price;
+	}
+
+	public void displayAllItem() {
+		System.out.println("[ 전체 상품 목록 ]");
+		menuItems.forEach((key, value) -> {
+			System.out.println(" [ " + key + " Menu ]");
+			for(Item item: value) {
+				System.out.println(item.id + ". " + item.name + "   | " + item.price + " | " + item.description);
+			}
+		});
 	}
 
 	public void displayCart() {
