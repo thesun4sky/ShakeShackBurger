@@ -88,11 +88,9 @@ public class ShakeShackBurgerApplication {
 					managementContext.displayCompletedOrders();
 					break;
 				case 3:
-					System.out.print("메뉴: ");
-					String menu = scanner.nextLine();
-
+					String menuName = getMenuName(scanner);
 					Item newItem = managementContext.createMenuItem(scanner);
-					menuContext.addMenuItem(menu, newItem);
+					menuContext.addMenuItem(menuName, newItem);
 					break;
 				case 4:
 					managementContext.deleteMenuItem();
@@ -106,11 +104,20 @@ public class ShakeShackBurgerApplication {
 		displayManagementMenu();
 	}
 
+	private static String getMenuName(Scanner scanner) {
+		System.out.print("메뉴 목록");
+		List<Menu> mainMenus = menuContext.getMenus("Main");
+		printMenu(mainMenus);
+		System.out.print("메뉴 ID: ");
+		int menuId = scanner.nextInt();
+		return menuContext.getMainMenuName(menuId);
+	}
+
 	private static void handleMenuItemInput(List<Item> items) {
 		Scanner scanner = new Scanner(System.in);
 		int input = scanner.nextInt();
 		if (input >= 1 && input <= items.size()) {
-			Item selectedItem = items.get(input);
+			Item selectedItem = items.get(input-1);
 			displayConfirmation(selectedItem);
 		} else {
 			System.out.println("잘못된 입력입니다. 다시 입력해주세요.");

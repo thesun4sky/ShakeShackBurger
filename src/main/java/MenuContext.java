@@ -77,6 +77,16 @@ class MenuContext {
 		menuItems.get(key).add(newItem);
 	}
 
+	public String getMainMenuName(int id) {
+		List<Menu> mainMenus = menus.get("Main");
+		for (Menu mainMenu : mainMenus) {
+			if (mainMenu.id == id) {
+				return mainMenu.name;
+			}
+		}
+		return "";
+	}
+
 	public void addToCart(Item menuItem) {
 		cart.add(menuItem);
 		totalPrice += menuItem.price;

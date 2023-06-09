@@ -83,14 +83,13 @@ public class ManagementContext {
 
 	public Item createMenuItem(Scanner scanner) {
 		System.out.print("이름: ");
-		String name = scanner.nextLine();
+		String name = scanner.next();
 
 		System.out.print("설명: ");
-		String description = scanner.nextLine();
+		String description = scanner.next();
 
 		System.out.print("가격: ");
 		double price = scanner.nextDouble();
-		scanner.nextLine();
 
 		System.out.println("상품이 생성되었습니다.");
 		System.out.println();
