@@ -4,24 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9636530-f211-4ff0-b2d0-d87eeac22cbc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jpa-buddy.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Item.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Menu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/MenuContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" afterDir="false" />
+    <list default="true" id="e9636530-f211-4ff0-b2d0-d87eeac22cbc" name="Changes" comment="feat : 키오스크 프로그램 주문시 요구사항 메세지 추가">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/MenuContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MenuContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +27,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -52,15 +43,15 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="ShakeShackBurgerApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ShakeShackBurgerApplication" />
@@ -85,6 +76,70 @@
       <updated>1685526892813</updated>
       <workItem from="1685526894510" duration="2409000" />
     </task>
+    <task id="LOCAL-00001" summary="fix : /.idea/ 경로 gitignore 에 추가">
+      <created>1686272119361</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1686272119361</updated>
+    </task>
+    <task id="LOCAL-00002" summary="fix : 메뉴 목록을 동적으로 출력할 수 있도록 함수 공통화 및 조건문 변경">
+      <created>1686272172097</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1686272172097</updated>
+    </task>
+    <task id="LOCAL-00003" summary="feat : 관리 프로그램 대기주문 목록, 완료주문 목록, 상품 생성 기능 추가">
+      <created>1686284200413</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686284200413</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat : 관리 프로그램 대기주문 목록, 완료주문 목록, 상품 생성 기능 추가">
+      <created>1686284315341</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1686284315341</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat : 관리 프로그램 상품 추가기능 보완">
+      <created>1686285322280</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1686285322280</updated>
+    </task>
+    <task id="LOCAL-00006" summary="feat : 관리 프로그램 상품 삭제 기능 추가">
+      <created>1686287684766</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686287684766</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat : 관리 프로그램 주문목록 조회시 주문시각, 완료시각, 총가격 필드 추가">
+      <created>1686288212329</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686288212329</updated>
+    </task>
+    <task id="LOCAL-00008" summary="feat : 키오스크 프로그램 주문목록 조회메뉴 기능 추가">
+      <created>1686288969905</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686288969905</updated>
+    </task>
+    <task id="LOCAL-00009" summary="feat : 키오스크 프로그램 주문시 요구사항 메세지 추가">
+      <created>1686289813059</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1686289813059</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,5 +155,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="fix : /.idea/ 경로 gitignore 에 추가" />
+    <MESSAGE value="fix : 메뉴 목록을 동적으로 출력할 수 있도록 함수 공통화 및 조건문 변경" />
+    <MESSAGE value="feat : 관리 프로그램 대기주문 목록, 완료주문 목록, 상품 생성 기능 추가" />
+    <MESSAGE value="feat : 관리 프로그램 상품 추가기능 보완" />
+    <MESSAGE value="feat : 관리 프로그램 상품 삭제 기능 추가" />
+    <MESSAGE value="feat : 관리 프로그램 주문목록 조회시 주문시각, 완료시각, 총가격 필드 추가" />
+    <MESSAGE value="feat : 키오스크 프로그램 주문목록 조회메뉴 기능 추가" />
+    <MESSAGE value="feat : 키오스크 프로그램 주문시 요구사항 메세지 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 키오스크 프로그램 주문시 요구사항 메세지 추가" />
   </component>
 </project>

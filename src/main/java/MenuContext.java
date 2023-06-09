@@ -23,13 +23,14 @@ class MenuContext {
 	private void initializeMenuItems() {
 		List<Menu> mainMenus = new ArrayList<>();
 		mainMenus.add(new Menu("Burgers", "앵거스 비프 통살을 다져만든 버거"));
-		mainMenus.add(new Menu("Forzen Custard", "매장에서 신선하게 만드는 아이스크림"));
+		mainMenus.add(new Menu("Frozen Custard", "매장에서 신선하게 만드는 아이스크림"));
 		mainMenus.add(new Menu("Drinks", "매장에서 직접 만드는 음료"));
 		mainMenus.add(new Menu("Beer", "뉴욕 브루클린 브루어리에서 양조한 맥주"));
 
 		List<Menu> orderMenus = new ArrayList<>();
 		orderMenus.add(new Menu("Order", "장바구니를 확인 후 주문합니다."));
 		orderMenus.add(new Menu("Cancel", "진행중인 주문을 취소합니다."));
+		orderMenus.add(new Menu("Order List", "대기/완료된 주문목록을 조회합니다."));
 
 		menus.put("Main", mainMenus);
 		menus.put("Order", orderMenus);
@@ -69,9 +70,46 @@ class MenuContext {
 		return menuItems.get(key);
 	}
 
+	public Map<String, List<Item>> getMenuItemMap() {
+		return menuItems;
+	}
+
+	public List<Item> getCart() {
+		return cart;
+	}
+
+	public void addMenu(String key, String description) {
+		menus.get("Main").add(new Menu(key, description));
+		menuItems.put(key, new ArrayList<>());
+	}
+
+	public void addMenuItem(String key, Item newItem) {
+		menuItems.get(key).add(newItem);
+	}
+
+	public String getMainMenuName(int id) {
+		List<Menu> mainMenus = menus.get("Main");
+		for (Menu mainMenu : mainMenus) {
+			if (mainMenu.id == id) {
+				return mainMenu.name;
+			}
+		}
+		return "";
+	}
+
 	public void addToCart(Item menuItem) {
 		cart.add(menuItem);
 		totalPrice += menuItem.price;
+	}
+
+	public void displayAllItem() {
+		System.out.println("[ 전체 상품 목록 ]");
+		menuItems.forEach((key, value) -> {
+			System.out.println(" [ " + key + " Menu ]");
+			for(Item item: value) {
+				System.out.println(item.id + ". " + item.name + "   | " + item.price + " | " + item.description);
+			}
+		});
 	}
 
 	public void displayCart() {
