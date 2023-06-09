@@ -78,6 +78,11 @@ class MenuContext {
 		return cart;
 	}
 
+	public void addMenu(String key, String description) {
+		menus.get("Main").add(new Menu(key, description));
+		menuItems.put(key, new ArrayList<>());
+	}
+
 	public void addMenuItem(String key, Item newItem) {
 		menuItems.get(key).add(newItem);
 	}

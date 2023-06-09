@@ -17,19 +17,20 @@ public class ShakeShackBurgerApplication {
 
 		System.out.println("[ SHAKESHACK MENU ]");
 		List<Menu> mainMenus = menuContext.getMenus("Main");
-		printMenu(mainMenus);
+		int num = printMenu(mainMenus, 1);
 
 		System.out.println("[ ORDER MENU ]");
 		List<Menu> orderMenus = menuContext.getMenus("Order");
-		printMenu(orderMenus);
+		printMenu(orderMenus, num);
 
 		handleMainMenuInput();
 	}
 
-	private static void printMenu(List<Menu> menus) {
+	private static int printMenu(List<Menu> menus, int num) {
 		for (int i=0; i<menus.size(); i++) {
-			System.out.println(menus.get(i).id + ". " + menus.get(i).name + "   | " + menus.get(i).description);
+			System.out.println(num++ + ". " + menus.get(i).name + "   | " + menus.get(i).description);
 		}
+		return num;
 	}
 
 	private static void handleMainMenuInput() {
@@ -120,11 +121,21 @@ public class ShakeShackBurgerApplication {
 	private static String getMenuName() {
 		System.out.println("[ 메뉴 목록 ]");
 		List<Menu> mainMenus = menuContext.getMenus("Main");
-		printMenu(mainMenus);
+		printMenu(mainMenus, 1);
+		System.out.println(mainMenus.size()+1 + ". 신규 메뉴");
 		System.out.print("메뉴 ID: ");
 		Scanner scanner = new Scanner(System.in);
 		int menuId = scanner.nextInt();
-		return menuContext.getMainMenuName(menuId);
+		if (menuId <= mainMenus.size()) {
+			return menuContext.getMainMenuName(menuId);
+		} else {
+			System.out.print("신규 메뉴이름: ");
+			String newMenuName = scanner.next();
+			System.out.print("신규 메뉴설명: ");
+			String newMenuDescription = scanner.next();
+			menuContext.addMenu(newMenuName, newMenuDescription);
+			return newMenuName;
+		}
 	}
 
 	private static void handleMenuItemInput(List<Item> items) {
