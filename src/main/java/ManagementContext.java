@@ -15,9 +15,9 @@ public class ManagementContext {
 		System.out.println("4. 상품 삭제");
 	}
 
-	public void addCartToOrder(int orderNumber, List<Item> cart) {
+	public void addCartToOrder(int orderNumber, List<Item> cart, Double totalPrice) {
 		List<Item> orderItemList = new ArrayList<>(cart);
-		orderList.add(new Order(orderNumber, orderItemList));
+		orderList.add(new Order(orderNumber, orderItemList, totalPrice));
 	}
 
 	public void displayWaitingOrders() {
@@ -71,6 +71,7 @@ public class ManagementContext {
 		for (Order order : orderList) {
 			if (order.complete) {
 				order.display();
+				System.out.println("완료시각 : " + order.completeDate);
 			}
 		}
 		System.out.println();

@@ -188,11 +188,12 @@ public class ShakeShackBurgerApplication {
 	private static void displayOrderComplete() {
 		int orderNumber = menuContext.generateOrderNumber();
 		List<Item> cart = menuContext.getCart();
+		Double totalPrice = menuContext.getTotalPrice();
 
 		System.out.println("주문이 완료되었습니다!\n");
 		System.out.println("대기번호는 [ " + orderNumber + " ] 번 입니다.");
 
-		managementContext.addCartToOrder(orderNumber, cart);
+		managementContext.addCartToOrder(orderNumber, cart, totalPrice);
 
 		resetCartAndDisplayMainMenu();
 	}

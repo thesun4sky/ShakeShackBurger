@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e9636530-f211-4ff0-b2d0-d87eeac22cbc" name="Changes" comment="feat : 관리 프로그램 상품 추가기능 보완">
+    <list default="true" id="e9636530-f211-4ff0-b2d0-d87eeac22cbc" name="Changes" comment="feat : 관리 프로그램 상품 삭제 기능 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ManagementContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ManagementContext.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MenuContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MenuContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -112,7 +112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686285322280</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat : 관리 프로그램 상품 삭제 기능 추가">
+      <created>1686287684766</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1686287684766</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -134,6 +141,7 @@
     <MESSAGE value="fix : 메뉴 목록을 동적으로 출력할 수 있도록 함수 공통화 및 조건문 변경" />
     <MESSAGE value="feat : 관리 프로그램 대기주문 목록, 완료주문 목록, 상품 생성 기능 추가" />
     <MESSAGE value="feat : 관리 프로그램 상품 추가기능 보완" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat : 관리 프로그램 상품 추가기능 보완" />
+    <MESSAGE value="feat : 관리 프로그램 상품 삭제 기능 추가" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat : 관리 프로그램 상품 삭제 기능 추가" />
   </component>
 </project>
