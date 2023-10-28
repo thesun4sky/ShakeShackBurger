@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 class MenuContext {
-	private Map<String, List<Menu>> menus;
-	private Map<String, List<Item>> menuItems;
-	private List<Item> cart;
-	private double totalPrice;
-	private int orderNumber;
+	private Map<String, List<Menu>> menus;	// 메뉴
+	private Map<String, List<Item>> menuItems;	// 상품메뉴
+	private List<Item> cart;	// 장바구니
+	private double totalPrice;	// 전체 가격
+	private int orderNumber;	// 주문 번호
 
 	public MenuContext() {
 		menus = new HashMap<>();
@@ -17,13 +17,13 @@ class MenuContext {
 		totalPrice = 0.0;
 		orderNumber = 0;
 
-		initializeMenuItems();
+		initializeMenuItems();	// 메뉴 및 상품메뉴 초기화
 	}
 
 	private void initializeMenuItems() {
 		List<Menu> mainMenus = new ArrayList<>();
 		mainMenus.add(new Menu("Burgers", "앵거스 비프 통살을 다져만든 버거"));
-		mainMenus.add(new Menu("Forzen Custard", "매장에서 신선하게 만드는 아이스크림"));
+		mainMenus.add(new Menu("Frozen Custard", "매장에서 신선하게 만드는 아이스크림"));
 		mainMenus.add(new Menu("Drinks", "매장에서 직접 만드는 음료"));
 		mainMenus.add(new Menu("Beer", "뉴욕 브루클린 브루어리에서 양조한 맥주"));
 
@@ -61,34 +61,62 @@ class MenuContext {
 		menuItems.put("Beer", beerMenu);
 	}
 
+	/**
+	 * 메뉴 조회
+	 * @param key 조회할 메뉴 키값
+	 * @return 조회된 메뉴 목록
+	 */
 	public List<Menu> getMenus(String key) {
 		return menus.get(key);
 	}
 
+	/**
+	 * 상품메뉴 조회
+	 * @param key 조회할 상품메뉴 키값
+	 * @return 조회된 상품메뉴 목록
+	 */
 	public List<Item> getMenuItems(String key) {
 		return menuItems.get(key);
 	}
 
+	/**
+	 * 장바구니에 상품메뉴 추가
+	 * @param menuItem 장바구니에 추가할 상품메뉴
+	 */
 	public void addToCart(Item menuItem) {
 		cart.add(menuItem);
 		totalPrice += menuItem.price;
 	}
 
+	/**
+	 * 장바구니 출력
+	 */
 	public void displayCart() {
 		for (Item item : cart) {
 			System.out.println(item.name + "   | " + item.price + " | " + item.description);
 		}
 	}
 
+	/**
+	 * 장바구니 전체가격 조회
+	 * @return 장바구니 전체가격
+	 */
 	public double getTotalPrice() {
 		return totalPrice;
 	}
 
+	/**
+	 * 신규 주문번호 조회
+	 * @return 신규 주문번호
+	 */
 	public int generateOrderNumber() {
 		orderNumber++;
 		return orderNumber;
 	}
 
+	/**
+	 * 장바구니 초기화
+	 */
 	public void resetCart() {
 		cart.clear();
 		totalPrice = 0.0;
