@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e9636530-f211-4ff0-b2d0-d87eeac22cbc" name="Changes" comment="feat : 키오스크 프로그램 주문시 요구사항 메세지 추가">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MenuContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MenuContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ManagementContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ManagementContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +76,7 @@
       <option name="presentableId" value="Default" />
       <updated>1685526892813</updated>
       <workItem from="1685526894510" duration="2409000" />
+      <workItem from="1698521825654" duration="897000" />
     </task>
     <task id="LOCAL-00001" summary="fix : /.idea/ 경로 gitignore 에 추가">
       <created>1686272119361</created>

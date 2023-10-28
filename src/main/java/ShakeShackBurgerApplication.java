@@ -27,8 +27,8 @@ public class ShakeShackBurgerApplication {
 	}
 
 	private static int printMenu(List<Menu> menus, int num) {
-		for (int i=0; i<menus.size(); i++) {
-			System.out.println(num++ + ". " + menus.get(i).name + "   | " + menus.get(i).description);
+		for (int i=0; i<menus.size(); i++, num++) {
+			System.out.println(num + ". " + menus.get(i).name + "   | " + menus.get(i).description);
 		}
 		return num;
 	}
@@ -80,7 +80,7 @@ public class ShakeShackBurgerApplication {
 		System.out.println("SHAKESHACK BURGER 관리 메뉴에 오신걸 환영합니다.");
 		System.out.println("아래 목록해서 원하는 명령을 골라 입력해주세요.\n");
 
-		managementContext.displayMainMenu();
+		managementContext.displayManagementMenu();
 
 		handleCommandInput();
 	}

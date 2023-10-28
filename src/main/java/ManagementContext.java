@@ -7,7 +7,7 @@ public class ManagementContext {
 
 	private List<Order> orderList = new ArrayList<>();
 
-	public void displayMainMenu() {
+	public void displayManagementMenu() {
 		System.out.println("0. 메인 메뉴");
 		System.out.println("1. 대기주문 목록");
 		System.out.println("2. 완료주문 목록");
