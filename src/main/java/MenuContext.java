@@ -4,11 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 class MenuContext {
-	private Map<String, List<Menu>> menus;
-	private Map<String, List<Item>> menuItems;
-	private List<Item> cart;
-	private double totalPrice;
-	private int orderNumber;
+	private Map<String, List<Menu>> menus;	// 메뉴
+	private Map<String, List<Item>> menuItems;	// 상품메뉴
+	private List<Item> cart;	// 장바구니
+	private double totalPrice;	// 전체 가격
+	private int orderNumber;	// 주문 번호
 
 	public MenuContext() {
 		menus = new HashMap<>();
@@ -17,7 +17,7 @@ class MenuContext {
 		totalPrice = 0.0;
 		orderNumber = 0;
 
-		initializeMenuItems();
+		initializeMenuItems();	// 메뉴 및 상품메뉴 초기화
 	}
 
 	private void initializeMenuItems() {
@@ -62,10 +62,20 @@ class MenuContext {
 		menuItems.put("Beer", beerMenu);
 	}
 
+	/**
+	 * 메뉴 조회
+	 * @param key 조회할 메뉴 키값
+	 * @return 조회된 메뉴 목록
+	 */
 	public List<Menu> getMenus(String key) {
 		return menus.get(key);
 	}
 
+	/**
+	 * 상품메뉴 조회
+	 * @param key 조회할 상품메뉴 키값
+	 * @return 조회된 상품메뉴 목록
+	 */
 	public List<Item> getMenuItems(String key) {
 		return menuItems.get(key);
 	}
@@ -97,11 +107,18 @@ class MenuContext {
 		return "";
 	}
 
+	/**
+	 * 장바구니에 상품메뉴 추가
+	 * @param menuItem 장바구니에 추가할 상품메뉴
+	 */
 	public void addToCart(Item menuItem) {
 		cart.add(menuItem);
 		totalPrice += menuItem.price;
 	}
 
+	/**
+	 * 장바구니 출력
+	 */
 	public void displayAllItem() {
 		System.out.println("[ 전체 상품 목록 ]");
 		menuItems.forEach((key, value) -> {
@@ -118,15 +135,26 @@ class MenuContext {
 		}
 	}
 
+	/**
+	 * 장바구니 전체가격 조회
+	 * @return 장바구니 전체가격
+	 */
 	public double getTotalPrice() {
 		return totalPrice;
 	}
 
+	/**
+	 * 신규 주문번호 조회
+	 * @return 신규 주문번호
+	 */
 	public int generateOrderNumber() {
 		orderNumber++;
 		return orderNumber;
 	}
 
+	/**
+	 * 장바구니 초기화
+	 */
 	public void resetCart() {
 		cart.clear();
 		totalPrice = 0.0;

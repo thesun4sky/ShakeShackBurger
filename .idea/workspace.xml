@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="e9636530-f211-4ff0-b2d0-d87eeac22cbc" name="Changes" comment="feat : 키오스크 프로그램 주문시 요구사항 메세지 추가">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/MenuContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/MenuContext.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ShakeShackBurgerApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,11 +33,16 @@
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="jar://$USER_HOME$/Library/Java/JavaVirtualMachines/corretto-1.8.0_362/Contents/Home/src.zip!/java/util/Map.java" root0="SKIP_INSPECTION" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2QYO8x2Xdu4go4LYF3fC3vba5kf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <OptionsSetting value="false" id="Update" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -62,6 +66,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ShakeShackBurgerApplication" />
         <item itemvalue="Application.ShakeShackBurgerApplication" />
       </list>
     </recent_temporary>
@@ -166,5 +171,9 @@
     <MESSAGE value="feat : 키오스크 프로그램 주문목록 조회메뉴 기능 추가" />
     <MESSAGE value="feat : 키오스크 프로그램 주문시 요구사항 메세지 추가" />
     <option name="LAST_COMMIT_MESSAGE" value="feat : 키오스크 프로그램 주문시 요구사항 메세지 추가" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
